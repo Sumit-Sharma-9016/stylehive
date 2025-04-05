@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import api from '../api.js'
 import { UserContext } from './UserProvider.jsx';
 import { useNavigate } from 'react-router-dom';
-import mongoose from 'mongoose';
 
 
 export const AppContext = createContext();
