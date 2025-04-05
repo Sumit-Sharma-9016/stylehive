@@ -175,7 +175,7 @@ const Collection = () => {
           })}
         </div> : 
         <div className='font-semibold text-gray-700 h-[80vh] w-[90vw] flex justify-center items-center'>
-          No products found!
+          Loading...
         </div>}
       </div>
   )
