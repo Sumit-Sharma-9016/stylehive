@@ -12,7 +12,7 @@ import Add from '../pages/Add'
 import AllOrders from '../pages/AllOrders'
 import Edit from '../pages/Edit'
 import PlaceOrder from '../pages/PlaceOrder'
-import Profile from '../pages/profile'
+import Profile from '../pages/Profile'
 
 const PageRouter = () => {
   return (
