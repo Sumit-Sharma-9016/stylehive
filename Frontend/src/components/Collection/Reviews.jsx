@@ -53,7 +53,7 @@ function Reviews({id, reviews, isVerified}) {
                     theme="light"
                     transition={Bounce}
                     />
-        <div className='flex items-center not-md:justify-between gap-2 md:gap-5 mb-5'>
+        <div className='flex items-center not-sm:justify-between gap-4 md:gap-5 mb-5'>
             <h1 className='text-[1.2rem] md:text-2xl font-semibold text-gray-700 '>Reviews</h1>
             <p className='text-gray-700 not-md:text-[0.9rem]'> {isVerified? <><i class="fa-solid fa-circle-check"></i> Verified Buyer</>: 'Unverified'} </p>
             <button onClick={() => {setReviewBox((prev) => !prev); setMessage(''); setUsername(user?.name); setRating(0)}} className='h-8 w-30 md:w-40 text-gray-700 md:text-[1.1rem] text-[0.9rem] border border-gray-300 bg-gray-100 cursor-pointer'>{reviewBox ? <><i class="fa-solid fa-pencil"></i> Write Review</>:<><i class="fa-solid fa-xmark"></i> close</>}</button>

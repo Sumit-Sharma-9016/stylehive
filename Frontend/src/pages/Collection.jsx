@@ -169,7 +169,7 @@ const Collection = () => {
           </div>
         </div>
         {filteredProducts.length? 
-        <div className='grid grid-cols-3 md:grid-cols-5 lg:grid-cols-5 2xl:grid-cols-6 justify-center gap-2 md:gap-2 lg:gap-4'>
+        <div className='grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 2xl:grid-cols-6 justify-center gap-2 md:gap-2 lg:gap-4'>
           {filteredProducts.map((product) => {
             return <Item key={product.id} product={product}/>
           })}

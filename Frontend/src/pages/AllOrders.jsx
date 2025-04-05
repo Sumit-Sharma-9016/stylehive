@@ -33,7 +33,7 @@ function AllOrders() {
   }, [state, allOrders]);
 
   if(!allOrders || !allOrders.length) {
-    return <div className='w-full h-[100vh] text-gray-700 font-semibold flex items-center justify-center'>No Orders Found!</div>
+    return <div className='w-full h-[90vh] text-gray-700 font-semibold flex items-center justify-center'>Loading...</div>
   }
   return (
     <div className='md:px-5 w-full'>
