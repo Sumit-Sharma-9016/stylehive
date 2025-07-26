@@ -7,7 +7,7 @@ import { UserContext } from '../context/UserProvider.jsx';
 import { toast, ToastContainer, Bounce } from 'react-toastify';
 
 function PlaceOrder() {
-    const {cartItems, products, getProducts, total, paymentMethods, placeOrderViaCOD} = useContext(AppContext);
+    const {cartItems, products, getProducts, total, paymentMethods, placeOrderViaCOD, placingOrder} = useContext(AppContext);
     const {user} = useContext(UserContext)
     const navigate = useNavigate();
 
@@ -118,14 +118,21 @@ function PlaceOrder() {
                                     >
                                        Go to Cart
                                     </button> 
-                                    {cartItems.length && <button
+                                    {cartItems.length && <div>
+                                        {!placingOrder? <button
                                         onClick={() => {
                                            placeOrderHandler();
                                         }} 
                                         className='active:bg-gray-900 w-30 px-2 py-1.5 bg-black text-white cursor-pointer'
-                                    >
+                                        >
                                         Place Order
-                                    </button>}
+                                        </button> : <button
+                                        className='active:bg-gray-900 w-30 px-2 py-1.5 bg-black text-white cursor-pointer'
+                                        >
+                                        Placing
+                                        </button>}
+                                        </div>
+                                    }
                                 </div>
                             </div>: paymentMethod === 'UPI'?
                             <div>

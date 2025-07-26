@@ -7,7 +7,7 @@ import { UserContext } from '../context/UserProvider';
 function Orders() {
 
     const {user} = useContext(UserContext);
-    const [orders, setOrders] = useState([]);
+    const [orders, setOrders] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -15,6 +15,14 @@ function Orders() {
             setOrders(user.orders);
         }
     },[user])
+
+    if(!orders) {
+        return (
+            <div className='w-full h-[90vh] flex flex-col items-center justify-center gap-2'>
+                <h2 className='text-gray-700'>Loading...</h2>
+            </div>
+        )
+    }
 
     if(!orders.length) {
         return (

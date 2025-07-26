@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function HeroSection() {
 
-    const images = ['https://cdn1.staticans.com/catalog/brandstore/vastrado/6-1737138600-rd_bannerdesktop.jpg', 'https://cdn1.staticans.com/catalog/brandstore/vastrado/114-1732041000-diwalidesktopbanner1.jpg', 'https://cdn1.staticans.com/catalog/brandstore/vastrado/114-1731263400-raddesktop.jpg', 'https://cdn1.staticans.com/catalog/brandstore/vastrado/114-1726425000-textureddestop.jpg', 'https://cdn1.staticans.com/catalog/vastrado/22Nov2023/114-1708367400-banner-dsktop1.jpg']
+    const images = ['https://www.vastrado.com/cdn/shop/files/Summer_Website2_2.jpg?v=1744014667', 'https://www.vastrado.com/cdn/shop/files/June_Desktop_Monsoon.jpg?v=1750309591', 'https://www.vastrado.com/cdn/shop/files/Summer_Website_3.jpg?v=1744012620', 'https://www.vastrado.com/cdn/shop/files/Summer_Website_4_2.jpg?v=1744021020']
 
     const [currentIndex, setCurrentIndex] = useState(0);
 

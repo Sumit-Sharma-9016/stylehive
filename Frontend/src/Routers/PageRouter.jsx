@@ -4,7 +4,6 @@ import Home from '../pages/Home'
 import About from '../pages/About'
 import Contact from '../pages/Contact'
 import ItemDetails from '../pages/ItemDetails'
-import CategoryCollection from '../pages/CategoryCollection'
 import Cart from '../pages/Cart'
 import Orders from '../pages/Orders'
 import Login from '../pages/Login'
@@ -18,8 +17,8 @@ const PageRouter = () => {
   return (
     <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/collection/:category' element={<Collection/>}/>
         <Route path='/collection' element={<Collection/>}/>
-        <Route path='/collection/:category' element={<CategoryCollection/>}/>
         <Route path='/item/:id' element = {<ItemDetails/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/about' element={<About/>}/>

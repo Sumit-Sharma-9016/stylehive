@@ -4,6 +4,7 @@ import Loader from '../components/Loader';
 import Item from '../components/Collection/Item';
 import api from '../api';
 import { UserContext } from '../context/UserProvider';
+import { useParams } from 'react-router-dom';
 
 const Collection = () => {
 
@@ -11,7 +12,7 @@ const Collection = () => {
   const {user} = useContext(UserContext);
 
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const category = 'all';
+  const {category} = useParams();
   const [selectedCategory, setSelectedCategory] = useState(category || 'all');
   const [selectedType, setSelectedType] = useState([]);
 
@@ -69,7 +70,7 @@ const Collection = () => {
       <div className='collection relative flex flex-col lg:flex-row gap-5 p-5'>
         <div className='filter-container lg:sticky top-12 flex lg:flex-col flex-row justify-between lg:justify-start lg:gap-3 lg:w-60 xl:w-70 lg:h-full lg:border-1 border-gray-300 lg:p-2 '>
           <div className='flex items-center gap-2 text-gray-700  text-[0.8rem] md:text-[0.9rem] cursor-pointer'>
-            <h1 onClick={() => {setCategoryBox((prev) => !prev)}} className='font-semibold flex gap-2 items-center'>SELECT CATEGORY : <p className='text-[0.9rem]'>{selectedCategory.toUpperCase()} <i className={`fa-solid fa-chevron-down text-[0.8rem]`}></i></p></h1>
+            <h1 onClick={() => {setCategoryBox((prev) => !prev)}} className='font-semibold flex gap-2 items-center'>SELECT CATEGORY : <p className='text-[0.9rem]'>{selectedCategory?.toUpperCase()} <i className={`fa-solid fa-chevron-down text-[0.8rem]`}></i></p></h1>
           </div>
 
           {/* Category dropdown box when click on select category */}

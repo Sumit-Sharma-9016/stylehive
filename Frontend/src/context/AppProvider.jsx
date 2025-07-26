@@ -17,6 +17,7 @@ const AppProvider = ({children}) => {
     const [searchInput, setSearchInput] = useState('');
     const [cartItems, setCartItems] = useState([]);
     const [allOrders, setAllOrders] = useState([]);
+    const [placingOrder, setPlacingOrder] = useState(false);
 
     const [orders, setOrders] = useState([]);
     const navigate = useNavigate();
@@ -93,8 +94,8 @@ const AppProvider = ({children}) => {
         }
     }
 
-    async function placeOrderViaCOD(address) {
-            
+    async function placeOrderViaCOD(address) { 
+        setPlacingOrder(true);   
         try {
             let orderCart = user.cart.map((item) => {
                 let product = products.find((product) => product._id === item.productId);
@@ -134,8 +135,11 @@ const AppProvider = ({children}) => {
                 setCartItems([]);
                 navigate('/orders');
             }, (2000));
+
+            setPlacingOrder(false);
         } catch (error) {
             toast(error.message);
+            setPlacingOrder(false);
         }
     }
 
@@ -246,7 +250,8 @@ const AppProvider = ({children}) => {
                 getAllOrders,
                 allTypes,
                 status,
-                paymentMethods}}>
+                paymentMethods,
+                placingOrder}}>
             {children}
         </AppContext.Provider>
     )

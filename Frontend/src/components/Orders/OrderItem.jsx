@@ -6,9 +6,7 @@ function OrderItem({cartItem}) {
 
     const navigate = useNavigate(); 
     const {products} = useContext(AppContext);
-    if(!products || !products.length) {
-        return;
-    }
+
     let product = products.find((product) => product._id === cartItem.productId)
     
     useEffect(() => {
@@ -17,10 +15,18 @@ function OrderItem({cartItem}) {
         }
     },[products]);
 
+    if (!products || !products.length || !product) {
+    return (
+      <div className="w-full p-4 rounded-md bg-gray-50 text-gray-500">
+        Loadings...
+      </div>
+        );
+    }
+
     return (
         <div className='w-100% p-2 rounded-md cursor-pointer flex gap-3'>
             <div  onClick={() => {navigate(`/item/${cartItem.productId}`)}} className='h-15 w-15 bg-gray-100'>
-                <img className='h-15 w-15 object-contain rounded-md m-auto' src={product.images[0].url} alt="" />
+                <img className='h-15 w-15 object-contain rounded-md m-auto' src={product?.images[0].url} alt="" />
             </div>
             <div className='flex md:flex-row flex-col gap-1 md:gap-2 w-full'>
                 <div className='flex flex-col overflow-hidden'>
